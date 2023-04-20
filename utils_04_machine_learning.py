@@ -557,11 +557,7 @@ class imputation():
             data_min = min(Prediction.min(), Raw.min())
             data_max = max(Prediction.max(), Raw.max())
             ax.fill_between(df_spread.index, upper, lower, color='blue', alpha=0.2, label=f'Std Dev: {ci}')
-            if data_max > 0: data_max += 5
-            else: data_max -= 5 
-            if data_min > 0: data_min -= 5 
-            else: data_min += 5 
-            ax.set_ylim(data_min, data_max)
+            ax.set_ylim(data_min - 5, data_max + 5)
         ax.legend(fontsize = 'medium')
 
         if error_on:
