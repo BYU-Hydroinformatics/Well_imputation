@@ -202,12 +202,12 @@ class imputation():
         # Check if we're forcing prior different than data: Left
         if force_left == 'positive': slope_l = abs(slope_l) 
         elif force_left == 'negative': slope_l = -1 * abs(slope_l)
-        elif cSlope_left not False: slope_l = cSlope_left
+        elif cSlope_left != False: slope_l = cSlope_left
         
         # Check if we're forcing prior different than data: Right
         if force_right == 'positive': slope_r = abs(slope_r) 
         elif force_right == 'negative': slope_r = -1 * abs(slope_r)
-        elif cSlope_right not False: slope_r = cSlope_right
+        elif cSlope_right != False: slope_r = cSlope_right
         
         # Extrapolate based on mean slope
         extrap_l = index_l * slope_l + d_slope['left']['Mean'].loc[s_min]
